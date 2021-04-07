@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+:root {
+  --left-bg-color: rgba(87, 84, 236, .7);
+  --right-bg-color: rgba(43, 43, 43, .8);
+  --left-btn-hover-color: rgba(87, 84, 236, 1);
+  --right-btn-hover-color: rgba(28, 122, 28, 1);
+  --hover-width: 75%;
+  --other-width: 25%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+  margin: 0;
+  height: 100vh;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #333;
+}
+
+.split {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+h1 {
+  color: white;
+  font-size: 4rem;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.btn {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 50%;
+  top: 60%;
+  transform: translateX(-50%);
+  text-decoration: none;
+  color: white;
+  border: white solid .2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 15rem;
+  padding: 1.5rem;
+  border-radius: 20px;
+}
+
+.split.left .btn:hover {
+  background-color: var(--left-btn-hover-color);
+  border-color: var(--left-btn-hover-color);
+}
+.split.right .btn:hover {
+  background-color: var(--right-btn-hover-color);
+  border-color: var(--right-btn-hover-color);
+}
+
+.split.left {
+  left: 0;
+  background: url('./images/ps5.jpg') no-repeat center center/cover;
+  background-color: #333333;
+}
+
+.split.left:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--left-bg-color);
+}
+
+.split.right {
+  right: 0;
+  background: url('./images/xbox.jpg') no-repeat center center/cover;
+}
+
+.split.right:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--right-bg-color);
+}
+
+.hover-left .left {
+  width: var(--hover-width);
+  transition: width 1s linear;
+}
+
+.hover-left .right {
+  width: var(--other-width);
+  transition: width 1s linear;
+}
+.hover-right .left {
+  width: var(--other-width);
+  transition: width 1s linear;
+}
+
+.hover-right .right {
+  width: var(--hover-width);
+  transition: width 1s linear;
+}
