@@ -78,7 +78,8 @@
                 const li = document.createElement('li')
                 li.innerHTML = `
           <input type="radio" name="answer" id="${ids[idx]}" class="answer">
-          <label for="${ids[idx]}" id="${ids[idx]}_text">${answer.toString()}</label>`
+          <label for="${ids[idx]}" id="${ids[idx]}_text"></label>`
+                li.querySelector('label').innerText = answer
                 ul.appendChild(li)
             })
 
@@ -95,7 +96,6 @@
             const questionEl = document.getElementById('question')
             questionEl.innerHTML = ''
             const submit = document.getElementById('submit')
-            const start = document.getElementById('submit')
             submit.classList.add('hidden')
             const rightAnswers = quizResults.filter(item => item === true).length
 
